@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-quantico: 'Quantico', sans-serif;
+}
+
 html {
-  background-color: #f1f5f9;
+  background: #2A7B9B;
+  background: linear-gradient(0deg,rgba(42, 123, 155, 1) 25%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%); 
   font-family: sans-serif;
+}
+html.dark {
+  background: #020024;
+  background: linear-gradient(0deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  color: #fff;
 }
 body {
   margin: 0 auto;
@@ -28,6 +41,9 @@ h1 {
   padding: 5px 10px;
 }
 
+.dark .nav-links a {
+  color: #fff;
+}
 .nav-links {
   width: 100%;
   display: none;

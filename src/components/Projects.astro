@@ -1,0 +1,37 @@
+---
+const projects = [
+  {
+    title: "Project One",
+    description: "A brief description of Project One.",
+    link: "https://example.com/project-one",
+  },
+  {
+    title: "Project Two",
+    description: "A brief description of Project Two.",
+    link: "https://example.com/project-two",
+  },
+];
+---
+
+<div class="flex flex-row gap-[2%] flex-wrap justify-center">
+  {
+    projects.map((project) => (
+      <div class="w-full md:w-[48%] lg:w-[31%] bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6 hover:shadow-xl transition-shadow duration-300">
+        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">
+          {project.title}
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          {project.description}
+        </p>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+        >
+          Ver Proyecto
+        </a>
+      </div>
+    ))
+  }
+</div>

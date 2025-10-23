@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const experiences = [
+  {
+    position: "Programador Junior",
+    company: "Grupo Cardinales",
+    duration: "Julio 2025 - Presente",
+    description:
+      "Desarrollo de aplicaciones web y móviles utilizando tecnologías modernas como React, Node.js y Expo. Colaboración en equipos ágiles para entregar soluciones innovadoras a los clientes.",
+  },
+  {
+    position: "Ingeniero de Software en practicas",
+    company: "BrigthCoders Consulting",
+    duration: "Enero 2024 - Abril 2024",
+    description:
+      "Participación en el desarrollo de software backend y frontend. Implementación de nuevas funcionalidades y optimización del rendimiento de las aplicaciones existentes.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    experiences.map((experience) => (
+      <li>
+        <ExperienceItem
+          title={experience.position}
+          company={experience.company}
+          duration={experience.duration}
+          description={experience.description}
+        />
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,12 @@
+---
+declare interface Props {
+  image: string;
+  alt?: string;
+}
+
+const { image, alt } = Astro.props as Props;
+---
+
+<div class="flex flex-row items-center justify-center m-2">
+  <img src={image} alt={alt} class="h-10" />
+</div>

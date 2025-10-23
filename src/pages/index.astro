@@ -1,8 +1,47 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home";
+import LenguageBadge from "../components/LanguageBadge.astro";
+import Hero from "../components/Hero.astro";
+const pageTitle = "Inicio";
+import { badges } from "../data/badges";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import TitleSection from "../components/TitleSection.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+  <main class="px-4">
+    <!-- Hero section -->
+    <SectionContainer clasName="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
+    <div class="space-y-24">
+      <!-- Lenguajes y herramientas -->
+      <SectionContainer>
+        <div class="flex flex-col items-center justify-center my-8">
+          <p class="font-quantico font-bold">EXPERIENCIA CON</p>
+          <div class="flex">
+            {
+              badges.map((badge) => (
+                <LenguageBadge image={badge.imageUrl} alt={badge.alt} />
+              ))
+            }
+          </div>
+        </div>
+      </SectionContainer>
+      <!-- Experiencia profesional: -->
+      <SectionContainer id="experiencia">
+        <TitleSection> Experiencia Profesional </TitleSection>
+        <Experience />
+      </SectionContainer>
+
+      <!-- Projects -->
+      <SectionContainer id="proyectos">
+        <TitleSection> Proyectos </TitleSection>
+        <Projects />
+      </SectionContainer>
+    </div>
+  </main>
+  <!-- <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} /> -->
 </BaseLayout>
